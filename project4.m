@@ -71,7 +71,7 @@ for m_ary=M
             rxMSG = rx(:);
             
             % Compute and store the BER for this iteration
-            [~, berVec(i,j)] = biterr(bits, rxMSG);  % We're interested in the BER, which is the 2nd output of BITERR
+            [~, berVec(i,j)] = biterr(bits(trainlen:end), rxMSG(trainlen:end));  % We're interested in the BER, which is the 2nd output of BITERR
 
         end  % End SNR iteration
     end      % End numIter iteration
